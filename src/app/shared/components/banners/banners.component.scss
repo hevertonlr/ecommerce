@@ -1,0 +1,26 @@
+.p-galleria .p-galleria-item-nav {
+  background: transparent;
+  color: #f1f5f9;
+  width: 4rem;
+  height: 4rem;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    outline-color 0.2s;
+  border-radius: 6px;
+  margin: 0 0.5rem;
+}
+.p-galleria .p-galleria-item-nav .p-galleria-item-prev-icon,
+.p-galleria .p-galleria-item-nav .p-galleria-item-next-icon {
+  font-size: 2rem;
+}
+.p-galleria .p-galleria-item-nav .p-icon-wrapper .p-icon {
+  width: 2rem;
+  height: 2rem;
+}
+.p-galleria .p-galleria-item-nav:not(.p-disabled):hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
