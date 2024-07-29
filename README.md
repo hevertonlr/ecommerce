@@ -92,5 +92,3 @@ Para executar o projeto localmente, siga os seguintes passos:
    ```
    http://localhost:4200
    ```
-
----
