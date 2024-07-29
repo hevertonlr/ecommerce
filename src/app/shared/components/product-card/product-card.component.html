@@ -1,0 +1,42 @@
+<div class="group relative mb-2">
+  <div
+    class="h-56 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:h-72 xl:h-80 group-hover:shadow-lg transition"
+  >
+    <img
+      alt="{{ product.name }}"
+      src="{{ product.img }}"
+      class="h-full w-auto m-auto object-contain object-center"
+    />
+  </div>
+  <h3 class="mt-4 text-sm text-gray-700 h-16 lg:h-11 line-clamp-3">
+    <a [href]="" (click)="onClick()">
+      <span class="absolute inset-0"></span>{{ product.name }}
+    </a>
+  </h3>
+  <p
+    class="mt-1 text-xs text-red-500 line-clamp-2 line-through"
+    *ngIf="product.discount > 0"
+  >
+    {{
+      product.discount > 0
+        ? (product.price | price)
+        : (product.price | discount: product.discount)
+    }}
+  </p>
+  <p class="mt-1 text-sm font-medium text-gray-900">
+    {{
+      product.discount > 0
+        ? (product.price | discount: product.discount)
+        : (product.price | price)
+    }}
+  </p>
+  <div class="mt-6">
+    <a
+      href="#"
+      (click)="addCart()"
+      class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+    >
+      Adicionar ao Carrinho<span class="sr-only">{{ product.name }}</span>
+    </a>
+  </div>
+</div>
