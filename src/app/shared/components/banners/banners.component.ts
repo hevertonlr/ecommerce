@@ -42,26 +42,20 @@ export class BannersComponent {
   constructor() {
     this.images = [
       {
-        itemImageSrc:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg',
-        thumbnailImageSrc:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria1s.jpg',
+        itemImageSrc: 'assets/img/banners/banner1.jpg',
+        thumbnailImageSrc: 'assets/img/banners/banner1.jpg',
         alt: 'Description for Image 1',
         title: 'Title 1',
       },
       {
-        itemImageSrc:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria2.jpg',
-        thumbnailImageSrc:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria2s.jpg',
+        itemImageSrc: 'assets/img/banners/banner2.jpg',
+        thumbnailImageSrc: 'assets/img/banners/banner2.jpg',
         alt: 'Description for Image 2',
         title: 'Title 2',
       },
       {
-        itemImageSrc:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria3.jpg',
-        thumbnailImageSrc:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria3s.jpg',
+        itemImageSrc: 'assets/img/banners/banner3.jpg',
+        thumbnailImageSrc: 'assets/img/banners/banner3.jpg',
         alt: 'Description for Image 3',
         title: 'Title 3',
       },

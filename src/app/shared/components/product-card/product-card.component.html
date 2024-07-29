@@ -1,6 +1,8 @@
-<div class="group relative mb-2">
+<div
+  class="group relative mb-2 transition duration-300 border border-solid border-gray-200 p-4 rounded-md hover:border-indigo-400"
+>
   <div
-    class="h-56 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:h-72 xl:h-80 group-hover:shadow-lg transition"
+    class="h-56 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:h-72 xl:h-80 transition duration-300"
   >
     <img
       alt="{{ product.name }}"
@@ -8,11 +10,19 @@
       class="h-full w-auto m-auto object-contain object-center"
     />
   </div>
-  <h3 class="mt-4 text-sm text-gray-700 h-16 lg:h-11 line-clamp-3">
+  <h3
+    class="mt-4 text-sm text-gray-700 h-16 lg:h-11 line-clamp-3 cursor-pointer"
+  >
     <a [href]="" (click)="onClick()">
       <span class="absolute inset-0"></span>{{ product.name }}
     </a>
   </h3>
+  <p
+    class="mt-1 text-xs text-red-500 line-clamp-2"
+    *ngIf="product.discount <= 0"
+  >
+    &nbsp;
+  </p>
   <p
     class="mt-1 text-xs text-red-500 line-clamp-2 line-through"
     *ngIf="product.discount > 0"
@@ -34,9 +44,24 @@
     <a
       href="#"
       (click)="addCart()"
-      class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+      class="relative flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-2 text-sm font-medium text-white hover:bg-indigo-700"
     >
-      Adicionar ao Carrinho<span class="sr-only">{{ product.name }}</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-4 mr-2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+        />
+      </svg>
+      <span class="xl:hidden">Adicionar</span>
+      <span class="hidden xl:block">Adicionar ao Carrinho</span>
     </a>
   </div>
 </div>

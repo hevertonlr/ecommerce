@@ -1,16 +1,59 @@
-// @import "primeng/resources/themes/lara-light-blue/theme.css";
-// @import "primeng/resources/primeng.css";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-// @layer tailwind-base, primeng, tailwind-utilities;
-// @layer tailwind-base {
-// @tailwind base;
-// }
-// @layer primeng;
-// @layer tailwind-utilities {
-// @tailwind components;
-// @tailwind utilities;
-// }
+$base-color: rgb(79, 70, 229);
+.p-element {
+  .p-icon-wrapper {
+    .p-icon {
+      color: rgba(0, 0, 0, 0.25);
+      width: 2rem;
+      height: 2rem;
+      transition: color 0.2s;
+    }
+  }
+}
+.p-galleria {
+  &-item-container {
+    background-color: #fafafa;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+  &-item {
+    &-nav {
+      background-color: transparent;
+      width: 4rem;
+      height: 4rem;
+      transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s,
+        outline-color 0.2s;
+      border-radius: 6px;
+      margin: -2rem 0.5rem;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+        .p-icon {
+          color: rgba(0, 0, 0, 0.45);
+        }
+      }
+    }
+  }
+}
+
+.p-galleria-indicators {
+  .p-galleria-indicator {
+    margin: 0 15px;
+    &.p-highlight {
+      .p-link {
+        background-color: $base-color;
+      }
+    }
+  }
+  .p-link {
+    height: 0.75rem;
+    width: 1.5rem;
+    background-color: rgb(31, 41, 55);
+    border-radius: 0.175rem;
+  }
+}

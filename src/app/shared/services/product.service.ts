@@ -5,22 +5,22 @@ import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
   private readonly API_URL = `${environment.apiUrl || 'http://localhost:3000'}/product`;
 
-  constructor(private httpClient: HttpClient) { }
-  
-  getAll = ():Observable<ProductModel[]> => 
+  constructor(private httpClient: HttpClient) {}
+
+  getAll = (): Observable<ProductModel[]> =>
     this.httpClient.get<ProductModel[]>(`${this.API_URL}`);
 
-  getById = (id: string):Observable<ProductModel> =>
-    this.httpClient.get<ProductModel>(`${this.API_URL}/${id}`)
-  
-  getPromos = ():Observable<ProductModel[]> =>
-    this.httpClient.get<ProductModel[]>(`${this.API_URL}?promotion=true`)
+  getById = (id: string): Observable<ProductModel> =>
+    this.httpClient.get<ProductModel>(`${this.API_URL}/${id}`);
 
-  getAvoidPromos = ():Observable<ProductModel[]> =>
-    this.httpClient.get<ProductModel[]>(`${this.API_URL}?promotion=false`)
+  getPromos = (): Observable<ProductModel[]> =>
+    this.httpClient.get<ProductModel[]>(`${this.API_URL}?promotion=true`);
+
+  getAvoidPromos = (): Observable<ProductModel[]> =>
+    this.httpClient.get<ProductModel[]>(`${this.API_URL}?promotion=false`);
 }

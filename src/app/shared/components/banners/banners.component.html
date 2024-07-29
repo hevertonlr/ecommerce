@@ -4,18 +4,17 @@
   [circular]="true"
   [showItemNavigators]="true"
   [showThumbnails]="false"
-  [showItemNavigatorsOnHover]="true"
+  [showIndicators]="true"
   [autoPlay]="true"
   [responsiveOptions]="responsiveOptions"
-  [containerClass]="'w-full max-h-60 block'"
   [containerStyle]="{ 'max-height': '100%' }"
 >
   <ng-template class="max-h-60" pTemplate="item" let-item>
     <div>
       <img
-        alt=""
+        [alt]="item.alt"
         [src]="item.itemImageSrc"
-        style="width: 100%; max-height: 300px; display: block"
+        class="w-full max-h-80 block"
       />
     </div>
   </ng-template>

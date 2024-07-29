@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { ProductModel } from '../../shared/models/product.model';
-import { map, Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SearchService } from '../../shared/services/search.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,33 +17,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductListComponent implements OnInit {
   products!: Observable<ProductModel[]>;
   filteredProducts!: Observable<ProductModel[]>;
-  searchText = '';
+  filterText: string = 'Todos os Produtos';
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
-  ) {
-    this.products = this.productService.getAll();
-    this.filteredProducts = this.products;
-  }
+    private searchService: SearchService,
+  ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(
-      (params) => (this.searchText = params['q'] || ''),
+    this.products = this.productService.getAll();
+    this.filteredProducts = this.searchService.currentSearchTerm.pipe(
+      switchMap((term) => {
+        this.filterText = term == '' ? 'Todos os Produtos' : term;
+        return this.products.pipe(
+          map((products) =>
+            products.filter((product) =>
+              product.name.toLowerCase().includes(term.toLowerCase()),
+            ),
+          ),
+        );
+      }),
     );
-    if (this.searchText != '') this.search();
   }
-
-  search = () => {
-    const words = this.searchText.toLowerCase().split(/\s+/);
-
-    this.filteredProducts = this.products.pipe(
-      map((products: ProductModel[]) =>
-        products.filter((product) =>
-          words.every((word) => product.name?.toLowerCase()?.includes(word)),
-        ),
-      ),
-    );
-  };
 }

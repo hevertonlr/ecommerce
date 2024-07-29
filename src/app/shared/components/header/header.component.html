@@ -1,115 +1,135 @@
-<header class="bg-white z-20 overflow-hidden shadow-sm">
-  <nav
-    aria-label="Global"
-    class="mx-auto flex w-full items-center justify-between p-4 lg:px-8"
-  >
-    <button
-      type="button"
-      class="relative rounded-md bg-white p-2 text-gray-400 sm:hidden"
+<header class="bg-white z-20 overflow-hidden shadow-md">
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 divide-y divide-gray-200 lg:px-8">
+    <nav
+      aria-label="Global"
+      class="mx-auto flex w-full items-center justify-between p-4 lg:px-8"
     >
-      <span class="absolute -inset-0.5"></span>
-      <span class="sr-only">Open menu</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        aria-hidden="true"
-        class="h-6 w-6"
+      <button
+        type="button"
+        class="relative rounded-md bg-white p-2 text-gray-400 sm:hidden"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-        ></path>
-      </svg>
-    </button>
-    <div class="flex flex-1 mr-4 lg:ml-0">
-      <a href="#">
-        <span class="sr-only">Your Company</span>
-        <img
-          alt=""
-          src="assets/img/logo.svg"
-          class="h-8 w-auto drop-shadow-sm"
-        />
-      </a>
-    </div>
-    <div class="w-full sm:max-w-80">
-      <label for="search" class="sr-only">Search</label>
-      <form (ngSubmit)="search($event)" class="relative">
-        <div
-          class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+        <span class="absolute -inset-0.5"></span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          class="h-6 w-6"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            class="h-5 w-5 text-gray-400"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-        <input
-          [(ngModel)]="searchText"
-          (keydown)="search($event)"
-          id="search"
-          name="search"
-          type="search"
-          placeholder="Search"
-          class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-visible:ring-indigo-600 outline-indigo-600 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-        />
-      </form>
-    </div>
-    <div class="flex flex-1 justify-end">
-      <div
-        class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end space-x-6"
-      >
-        <a
-          href="#"
-          class="text-sm font-medium text-gray-700 hover:text-gray-800"
-          >Entrar</a
-        >
-        <span aria-hidden="true" class="h-6 w-px bg-gray-200"></span>
-        <a
-          href="#"
-          class="text-sm font-medium text-gray-700 hover:text-gray-800"
-          >Crie sua conta</a
-        >
-      </div>
-      <div class="ml-4 flow-root lg:ml-6">
-        <a
-          [href]=""
-          (click)="goToCart()"
-          class="group -m-2 flex items-center p-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-            class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-500"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-            ></path>
-          </svg>
-          <span
-            class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
-            >{{ cartCount() }}</span
-          >
-          <span class="sr-only">items in cart, view bag</span>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          ></path>
+        </svg>
+      </button>
+      <div class="flex flex-1 mr-4 lg:ml-0">
+        <a href="#">
+          <span class="sr-only">HLR E-commerce</span>
+          <img
+            alt=""
+            src="assets/img/logo.svg"
+            class="h-8 w-auto drop-shadow-sm"
+          />
         </a>
       </div>
-    </div>
-  </nav>
+      <div class="w-full sm:max-w-80">
+        <label for="search" class="sr-only">Search</label>
+        <div class="relative">
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="h-5 w-5 text-gray-400"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <input
+            [(ngModel)]="searchText"
+            (keydown.enter)="onSearch()"
+            id="search"
+            name="search"
+            type="search"
+            placeholder="Buscar Produtos"
+            class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-visible:ring-indigo-600 outline-indigo-600 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div class="flex flex-1 justify-end">
+        <div
+          class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end space-x-6"
+        >
+          <a
+            href="#"
+            class="text-sm font-medium text-gray-700 hover:text-gray-800"
+            >Entrar</a
+          >
+          <span aria-hidden="true" class="h-6 w-px bg-gray-200"></span>
+          <a
+            href="#"
+            class="text-sm font-medium text-gray-700 hover:text-gray-800"
+            >Crie sua conta</a
+          >
+        </div>
+        <div class="ml-4 flow-root lg:ml-6">
+          <a
+            [href]=""
+            (click)="goToCart()"
+            class="group -m-2 flex items-center p-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+              ></path>
+            </svg>
+            <span
+              class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
+              >{{ cartCount() }}</span
+            >
+          </a>
+        </div>
+      </div>
+    </nav>
+    <nav aria-label="Global" class="hidden lg:flex lg:space-x-8 lg:py-2">
+      <a
+        [routerLink]="['product-list']"
+        aria-current="page"
+        class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 inline-flex items-center rounded-md px-3 py-2 text-sm font-medium"
+        >Todos os Produtos</a
+      ><a
+        [href]=""
+        class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 inline-flex items-center rounded-md px-3 py-2 text-sm font-medium"
+        >Ofertas</a
+      ><a
+        [href]=""
+        class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 inline-flex items-center rounded-md px-3 py-2 text-sm font-medium"
+        >Mais Vendidos</a
+      ><a
+        [href]=""
+        class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 inline-flex items-center rounded-md px-3 py-2 text-sm font-medium"
+        >Eletrônicos</a
+      >
+    </nav>
+  </div>
 </header>
